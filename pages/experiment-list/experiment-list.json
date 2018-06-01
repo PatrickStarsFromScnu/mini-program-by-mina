@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "experiment-brief": "../../components/experiment-brief/experiment-brief"
+  },
+  "navigationBarBackgroundColor": "#6476DB",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "具体实验",
+  "backgroundTextStyle": "light"
+}

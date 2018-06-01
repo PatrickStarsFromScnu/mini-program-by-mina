@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/experiment-type/experiment-type",
+    "pages/my-experiments/my-experiments",
+    "pages/experiment-list/experiment-list"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "寻寻被试",
+    "navigationBarTextStyle":"black"
+  }
+}

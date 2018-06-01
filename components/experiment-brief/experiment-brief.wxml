@@ -1,0 +1,16 @@
+<view class="brief">
+  <view class="brief-left">
+    <image class="brief-image" src="{{picture}}" />
+    <text class="brief-publisher">{{publisher}}</text>
+  </view>
+  <view class="brief-right">
+    <text class="brief-name">{{experimentName}}</text>
+    <text class="brief-type">分类：{{type}}</text>
+    <view class="brief-some-info">
+      <text class="brief-pay-title">薪酬:</text>
+      <text class="brief-pay-number">￥{{pay}}</text> / 
+      <text class="brief-duration">{{duration}} min</text>
+      <text class="brief-more">详情 ></text>
+    </view>
+  </view>
+</view>

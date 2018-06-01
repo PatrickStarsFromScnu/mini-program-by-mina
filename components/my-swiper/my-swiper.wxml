@@ -1,0 +1,7 @@
+<swiper class="my-swiper" indicator-dots="true" autoplay="true">
+  <block wx:for="{{imgUrls}}" wx:key="index">
+    <swiper-item class="my-swiper-item">
+      <image src="{{item}}" class="my-swiper-image" />
+    </swiper-item>
+  </block>
+</swiper>

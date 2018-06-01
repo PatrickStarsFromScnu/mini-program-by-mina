@@ -1,0 +1,5 @@
+<scroll-view scroll-y style="height: 100%; margin-top: 20rpx">
+  <view wx:for="{{experimentsInfo}}" wx:key="index">
+    <experiment-brief experiment-name="{{item.name}}" type="{{item.type}}" pay="{{item.pay}}" duration="{{item.duration}}" publisher="{{item.publisher}}" picture="{{item.picture}}"></experiment-brief>
+  </view>
+</scroll-view>

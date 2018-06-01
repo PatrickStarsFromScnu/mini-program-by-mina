@@ -1,0 +1,33 @@
+.type-item {
+  position: relative;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+  height: 110rpx;
+  line-height: 110rpx;
+  width: 90%;
+  margin: 40rpx auto;
+  border-radius: 8rpx;
+}
+.item-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.type-border {
+  border: 1rpx solid rgb(216, 215, 215)
+}
+.bg-red {
+  background-color: #F7A0A4;
+}
+.bg-green {
+  background-color: #C4E3A0;
+}
+.bg-blue {
+  background-color: #A4ACDB
+}
+.bg-orange {
+  background-color: #FBDBAB
+}
+.bg-grey {
+  background-color: #C6C3C0
+}

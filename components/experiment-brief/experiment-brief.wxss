@@ -1,0 +1,55 @@
+.brief {
+  height: 220rpx;
+  border-bottom: 1rpx solid #f0eded;
+}
+.brief-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  float: left;
+  height: 220rpx;
+  width: 220rpx;
+}
+.brief-image {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  margin: 30rpx 0;
+}
+.brief-publisher {
+  font-size: 24rpx;
+}
+.brief-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 200rpx;
+}
+.brief-name {
+  font-size: 34rpx;
+  font-weight: 500;
+}
+.brief-type {
+  font-size: 26rpx;
+  color: #797373
+}
+.brief-some-info {
+  font-size: 26rpx;
+}
+.brief-pay-title {
+  font-size: 26rpx;
+}
+.brief-pay-number {
+  font-size: 32rpx;
+  color: #E83232;
+  margin: 0 6rpx;
+}
+.brief-duration {
+  font-size: 26rpx
+}
+.brief-more {
+  font-size: 26rpx;
+  color: #978888;
+  float: right;
+  margin-right: 50rpx;
+}
