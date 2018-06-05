@@ -21,7 +21,7 @@
     </view>
   </view>
   <view hidden="{{move === 'light-left'}}">
-    <button class="my-big-button">我要发布</button>
+    <button class="my-big-button" bindtap="navigateToReleaseExperiments">我要发布</button>
     <view wx:for="{{experimentsInfo}}" wx:key="index">
       <view class="small-button-around">
           <button class="my-small-button">删除该实验</button>

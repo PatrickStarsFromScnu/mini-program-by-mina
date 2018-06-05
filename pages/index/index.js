@@ -49,5 +49,10 @@ Page({
     wx.navigateTo({
       url: '../experiment-type/experiment-type'
     })
+  },
+  navigateToExperimentDeatil() {
+    wx.navigateTo({
+      url: '../experiment-detail/experiment-detail'
+    })
   }
 }) 

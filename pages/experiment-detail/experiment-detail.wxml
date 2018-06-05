@@ -1,0 +1,43 @@
+<view style="height: 100%;">
+  <view class="index-top-info">
+    <image class="index-top-picture" src="{{url}}" />
+    <text class="index-top-name">{{experimentsInfo.publisher_name}}</text>
+  </view>
+  <view class="line-css"></view>
+  <view class="experiment-detail">
+    <view class="detail-item">
+      <text>实验类型:</text>
+      <text>{{experimentsInfo.type}}</text>
+    </view>
+    <view class="detail-item">
+      <text>实验时长:</text>
+      <text>{{experimentsInfo.duration}}</text>
+    </view>
+    <view class="detail-item">
+      <text>实验地点:</text>
+      <text>{{experimentsInfo.position}}</text>
+    </view>
+    <view class="detail-item">
+      <text>报酬:</text>
+       <text class="detail-item-pay">￥{{experimentsInfo.pay}}</text>
+    </view>
+    <view class="detail-item-column">
+      <text>被试要求:</text>
+      <text style="font-size: 32rpx; margin: 16rpx 0 0 80rpx">{{experimentsInfo.request}}</text>
+    </view>
+    <view class="detail-item-column">
+      <text>可选时间段:</text>
+      <text style="font-size: 32rpx; margin: 16rpx 0 0 80rpx">{{experimentsInfo.period}}</text>
+    </view>
+    <view class="detail-item">
+      <text>其他信息:</text>
+      <text>{{experimentsInfo.others}}</text>
+    </view>
+    <view class="detail-item">
+      <text>报名方式:</text>
+      <text>{{experimentsInfo.others}}</text>
+    </view>
+  </view>
+  <button>标记为我已预约</button>
+  <text class="note">通过短信预约成功后，建议添加至我的预约实验</text>
+</view>
