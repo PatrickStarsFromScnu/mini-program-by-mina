@@ -23,19 +23,23 @@
     </view>
     <view class="form-item">
       <span>实验地点：</span>
-      <textarea placeholder='单行输入'></textarea> 
+      <textarea placeholder='多行输入'></textarea> 
     </view>
     <view class="form-item">
       <span>实验要求：</span>
-      <textarea placeholder='单行输入'></textarea>
+      <textarea placeholder='多行输入'></textarea>
     </view>
     <view class="form-item">
       <span>时间段：</span>
-      <textarea placeholder='单行输入'></textarea>
+      <textarea placeholder='多行输入'></textarea>
+    </view>
+    <view class="form-item">
+      <span>报名方式：</span>
+      <textarea placeholder='多行输入'></textarea>
     </view>
     <view class="form-item">
       <span>其他：</span>
-      <textarea placeholder='单行输入'></textarea>
+      <textarea placeholder='多行输入'></textarea>
     </view>
     </form>
     <button>发布</button>
