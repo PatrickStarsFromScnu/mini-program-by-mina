@@ -1,6 +1,9 @@
+const getAllExperiments = require('../../api/data').getAllExperiments
+
 Page({
   data: {
-    url: '../../images/portrait.png',
+    picture: '',
+    userName: '',
     imgUrls: [
       '../../images/a.jpeg',
       '../../images/timg.jpg'
@@ -49,5 +52,31 @@ Page({
     wx.navigateTo({
       url: '../experiment-type/experiment-type'
     })
+  },
+  getExperiments() {
+    let ctx = this
+    getAllExperiments()
+    .then(res => {
+      console.log(res)     
+    })
+  },
+  onLoad() {
+    wx.getStorage({
+      key: 'userName',
+      success: res => {
+        this.setData({
+          userName: res.data
+        })
+      }
+    })
+    wx.getStorage({
+      key: 'picture',
+      success: res => {
+        this.setData({
+          picture: res.data
+        })
+      }
+    })
+    this.getExperiments()
   }
 }) 

@@ -1,7 +1,7 @@
 <view style="height: 100%;">
   <view class="index-top-info">
-    <image class="index-top-picture" src="{{url}}" />
-    <text class="index-top-name">holz</text>
+    <image class="index-top-picture" src="{{picture}}" />
+    <text class="index-top-name">{{userName}}</text>
   </view>
   <scroll-view scroll-y style="height: 88%">
     <view class="top-bg"></view>

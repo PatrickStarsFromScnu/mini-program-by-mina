@@ -6,10 +6,15 @@ const request = require('./request')
  * 封装 wx.request 函数, 并在次对所有请求统一
  * 管理，并将异步处理方式由 回调 改为 链式 的方式处理
 */
-function login (params) {
+const login = params => {
   return request('POST', 'https://www.holyzheng.top/auth/login', params)
 }
 
+const getAllExperiments = params => {
+  return request('GET', 'https://www.holyzheng.top/public/getAllExperiments', params)
+} 
+
 module.exports = {
-  login
+  login,
+  getAllExperiments
 }
