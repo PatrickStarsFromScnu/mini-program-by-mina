@@ -14,10 +14,10 @@
       <view class="my-experiment" bindtap="navigateToMyExperiments">
           <text class="icon icon-lab"></text>
           <text class="icon icon-text">我的实验</text>
-      </view>
+      </view> 
     </view>
     <view wx:for="{{experimentsInfo}}" wx:key="index">
-        <experiment-brief experiment-name="{{item.name}}" type="{{item.type}}" pay="{{item.pay}}" duration="{{item.duration}}" publisher="{{item.publisher}}" picture="{{item.picture}}"></experiment-brief>
+        <experiment-brief experiment-name="{{item.name}}" type="{{item.type}}" pay="{{item.pay}}" duration="{{item.duration}}" publisher="{{item.publisher}}" picture="{{item.picture}}" bindtap="navigateToExperimentDeatil"></experiment-brief>
     </view>
   </scroll-view>
 </view>

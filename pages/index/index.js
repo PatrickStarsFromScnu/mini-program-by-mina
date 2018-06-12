@@ -77,6 +77,5 @@ Page({
         })
       }
     })
-    this.getExperiments()
   }
 }) 

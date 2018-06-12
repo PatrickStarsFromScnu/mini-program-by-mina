@@ -4,7 +4,9 @@
     "pages/index/index",
     "pages/experiment-type/experiment-type",
     "pages/my-experiments/my-experiments",
-    "pages/experiment-list/experiment-list"
+    "pages/experiment-list/experiment-list",
+    "pages/release-experiments/release-experiments",
+    "pages/experiment-detail/experiment-detail"
   ],
   "window":{
     "backgroundTextStyle":"light",

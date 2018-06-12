@@ -37,5 +37,10 @@ Page({
     this.setData({
       move: 'light-left'
     })
+  },
+  navigateToReleaseExperiments() {
+    wx.navigateTo({
+      url: '../release-experiments/release-experiments'
+    })
   }
 })
