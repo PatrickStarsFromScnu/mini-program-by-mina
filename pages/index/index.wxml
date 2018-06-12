@@ -17,7 +17,7 @@
       </view> 
     </view>
     <view wx:for="{{experimentsInfo}}" wx:key="index">
-        <experiment-brief experiment-name="{{item.name}}" type="{{item.type}}" pay="{{item.pay}}" duration="{{item.duration}}" publisher="{{item.publisher}}" picture="{{item.picture}}" bindtap="navigateToExperimentDeatil"></experiment-brief>
+        <experiment-brief experiment-name="{{item.title}}" type="{{item.type}}" pay="{{item.pay}}" duration="{{item.duration}}" publisher="{{item.publisher_name}}" picture="../../images/portrait.png" bindtap="navigateToExperimentDeatil"></experiment-brief>
     </view>
   </scroll-view>
 </view>

@@ -9,38 +9,6 @@ Page({
       '../../images/timg.jpg'
     ],
     experimentsInfo: [
-      {
-        name: '实验一，这是一个实验',
-        type: '行为实验',
-        pay: '10',
-        duration: '20',
-        publisher: 'holy',
-        picture: '../../images/portrait.png'
-      },
-      {
-        name: '实验一，这是一个实验',
-        type: '行为实验',
-        pay: '10',
-        duration: '20',
-        publisher: 'holy',
-        picture: '../../images/portrait.png'
-      },
-      {
-        name: '实验一，这是一个实验',
-        type: '行为实验',
-        pay: '10',
-        duration: '20',
-        publisher: 'holy',
-        picture: '../../images/portrait.png'
-      },
-      {
-        name: '实验一，这是一个实验',
-        type: '行为实验',
-        pay: '10',
-        duration: '20',
-        publisher: 'holy',
-        picture: '../../images/portrait.png'
-      }
     ]
   },
   navigateToMyExperiments() {
@@ -57,7 +25,30 @@ Page({
     let ctx = this
     getAllExperiments()
     .then(res => {
-      console.log(res)     
+      this.setData({
+        experimentsInfo: res.data.data
+      })
+      // 借助首页的请求，当返回状态码401时，表示登录失效
+      // 删除storage中的token，并提示用户重新登录
+      if (res.data.code === 401) {
+        wx.removeStorageSync('token')
+        wx.showModal({
+          title: '登录已过期',
+          content: '请重新登录小程序',
+          showCancel: false,
+          success: res => {
+            wx.redirectTo({
+              url: '../sigin/sigin'
+            })
+          },
+          fail: err => {
+            console.log('重新登录失败', err)
+          }
+        })
+      }
+    })
+    .catch(err => {
+      console.log('getExperiment: ', err)
     })
   },
   onLoad() {
@@ -77,5 +68,6 @@ Page({
         })
       }
     })
+    this.getExperiments()
   }
 }) 
