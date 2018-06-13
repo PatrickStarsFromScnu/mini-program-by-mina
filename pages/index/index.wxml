@@ -3,7 +3,7 @@
     <image class="index-top-picture" src="{{picture}}" />
     <text class="index-top-name">{{userName}}</text>
   </view>
-  <scroll-view scroll-y style="height: 88%">
+  <scroll-view scroll-y style="height: 88%" bindscrolltolower="getNextExperiments">
     <view class="top-bg"></view>
     <my-swiper imgUrls="{{imgUrls}}"></my-swiper>
     <view class="index-center">
@@ -17,7 +17,7 @@
       </view> 
     </view>
     <view wx:for="{{experimentsInfo}}" wx:key="index">
-        <experiment-brief experiment-name="{{item.title}}" type="{{item.type}}" pay="{{item.pay}}" duration="{{item.duration}}" publisher="{{item.publisher_name}}" picture="../../images/portrait.png" bindtap="navigateToExperimentDeatil"></experiment-brief>
+        <experiment-brief class="{{'brief-image-' + index}}" index="{{index}}" experiment-name="{{item.title}}" type="{{item.type}}" pay="{{item.pay}}" duration="{{item.duration}}" publisher="{{item.publisher_name}}" picture="{{item.user.picture}}" bindtap="navigateToExperimentDeatil"></experiment-brief>
     </view>
   </scroll-view>
 </view>

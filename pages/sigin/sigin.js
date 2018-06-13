@@ -1,7 +1,7 @@
 const login = require('../../api/data').login
 
 Page({
-  onLoad() {
+  onReady() {
     // 查看storage中是否有已存在的token
     wx.showLoading()
     wx.getStorage({

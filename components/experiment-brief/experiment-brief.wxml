@@ -1,6 +1,6 @@
 <view class="brief">
   <view class="brief-left">
-    <image class="brief-image" src="{{picture}}" />
+    <image class="brief-image" src="{{load ? picture : defaultPicture}}" />
     <text class="brief-publisher">{{publisher}}</text>
   </view>
   <view class="brief-right">

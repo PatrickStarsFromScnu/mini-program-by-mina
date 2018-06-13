@@ -8,8 +8,9 @@ Page({
       '../../images/a.jpeg',
       '../../images/timg.jpg'
     ],
-    experimentsInfo: [
-    ]
+    experimentsInfo: [],
+    times: 1, // 请求实验列表的次数
+    noMoreExperiments: false // 是否已经把全部实验请求到了。
   },
   navigateToMyExperiments() {
     wx.navigateTo({
@@ -21,13 +22,26 @@ Page({
       url: '../experiment-type/experiment-type'
     })
   },
-  getExperiments() {
+  navigateToExperimentDeatil() {
+    wx.navigateTo({
+      url: '../experiment-detail/experiment-detail'
+    })
+  },
+  getExperiments(params) {
     let ctx = this
-    getAllExperiments()
+    wx.showLoading()
+    getAllExperiments(params)
     .then(res => {
-      this.setData({
-        experimentsInfo: res.data.data
-      })
+      wx.hideLoading()
+      if (res.data.data.length === 0) {
+        ctx.setData({
+          noMoreExperiments: true
+        })
+      } else {
+        ctx.setData({
+          experimentsInfo: ctx.data.experimentsInfo.concat(res.data.data)
+        })
+      }
       // 借助首页的请求，当返回状态码401时，表示登录失效
       // 删除storage中的token，并提示用户重新登录
       if (res.data.code === 401) {
@@ -48,14 +62,31 @@ Page({
       }
     })
     .catch(err => {
-      console.log('getExperiment: ', err)
+      wx.hideLoading()
+      console.log('getExperiments Error: ', err)
     })
   },
+  getNextExperiments() {
+    const ctx = this
+    // 实验数目比上次多的话，说明没有请求完，可以继续触发。
+    if (!ctx.data.noMoreExperiments) {
+      ctx.setData({
+        times: ++ctx.data.times
+      })
+      ctx.getExperiments({amount: 5, times: ctx.data.times})
+    } else {
+      wx.showToast({
+        title: '没有更多了哦',
+        icon: 'none'
+      })
+    }
+  },
   onLoad() {
+    const ctx = this
     wx.getStorage({
       key: 'userName',
       success: res => {
-        this.setData({
+        ctx.setData({
           userName: res.data
         })
       }
@@ -63,11 +94,11 @@ Page({
     wx.getStorage({
       key: 'picture',
       success: res => {
-        this.setData({
+        ctx.setData({
           picture: res.data
         })
       }
     })
-    this.getExperiments()
+    ctx.getExperiments({amount: 5, times: 1})
   }
-}) 
+})
