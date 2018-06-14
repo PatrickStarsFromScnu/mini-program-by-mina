@@ -20,6 +20,9 @@ function request (method, url, data) {
         'Authorization': 'Bearer ' + token
       },
       success: res => {
+        // 当返回状态码401时，表示登录过期或失效
+        // 删除storage中的token，并提示用户重新登录
+        util.checkAuthority(res)
         resolve(res)
       },
       fail: err => {

@@ -1,7 +1,7 @@
 Page({
-  navigateByType() {
+  navigateByType(e) {
     wx.navigateTo({
-      url: '../experiment-list/experiment-list'
+      url: `../experiment-list/experiment-list?type=${e.currentTarget.dataset.type}`
     })
   }
 })

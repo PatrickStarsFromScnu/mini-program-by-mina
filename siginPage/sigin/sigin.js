@@ -10,7 +10,7 @@ Page({
         if (token !== '') {
           wx.hideLoading()
           wx.redirectTo({
-            url: '../index/index'
+            url: '../../pages/index/index'
           })
           console.log('处于登录状态')
         }
@@ -56,8 +56,15 @@ Page({
                               console.log('token 存储成功')
                             }
                           })
+                          wx.setStorage({
+                            key: 'userId',
+                            data: data.userId,
+                            success: () => {
+                              console.log('userId 存储成功')
+                            }
+                          })
                           wx.redirectTo({
-                            url: '../index/index'
+                            url: '../../pages/index/index'
                           })
                         })
                         .catch( err => {

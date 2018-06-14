@@ -8,6 +8,6 @@ App({
     console.log('App Hide')
   },
   globalData: {
-    hasLogin: false
+    experimentInfo: {}
   }
 })

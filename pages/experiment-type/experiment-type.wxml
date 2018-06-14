@@ -2,27 +2,27 @@
   <view class="type-item" style="height: 90rpx; margin: 0 40rpx;">
     <text class="item-center">全部分类</text>
   </view>
-  <view class="type-item bg-red" bindtap="navigateByType">
+  <view class="type-item bg-red" data-type="行为实验" bindtap="navigateByType">
     <text class="icon-pointer"></text>
     <text class="item-center">行为实验</text>
   </view>
-  <view class="type-item bg-green">
+  <view class="type-item bg-green" data-type="脑电实验" bindtap="navigateByType">
       <text class="icon-lamp"></text>
       <text class="item-center">脑电实验</text>
   </view>
-  <view class="type-item bg-blue">
+  <view class="type-item bg-blue" data-type="问卷" bindtap="navigateByType">
       <text class="icon-pencil"></text>
       <text class="item-center">问卷</text>
   </view>
-  <view class="type-item bg-orange">
+  <view class="type-item bg-orange" data-type="核磁共振" bindtap="navigateByType">
       <text class="icon-feed"></text>
       <text class="item-center">核磁共振</text>
   </view>
-  <view class="type-item bg-grey">
+  <view class="type-item bg-grey" data-type="皮肤电实验" bindtap="navigateByType">
       <text class="icon-power"></text>
       <text class="item-center">皮肤电实验</text>
   </view>
-  <view class="type-item type-border">
+  <view class="type-item type-border" data-type="其他" bindtap="navigateByType">
       <text>···</text>
       <text class="item-center">其他</text>
   </view>

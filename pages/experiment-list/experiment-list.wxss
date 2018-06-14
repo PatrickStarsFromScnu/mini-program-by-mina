@@ -1,3 +1,15 @@
 page {
   height: 100%; 
 }
+
+.list-nothing {
+  width: 100%;
+  padding-top: 100rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.list-nothing-text {
+  font-size: 30rpx;
+  color: rgb(163, 159, 159)
+}

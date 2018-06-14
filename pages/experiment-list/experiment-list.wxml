@@ -1,5 +1,8 @@
-<scroll-view scroll-y style="height: 100%; margin-top: 20rpx">
+<view style="height: 100%; margin-top: 20rpx">
   <view wx:for="{{experimentsInfo}}" wx:key="index">
-    <experiment-brief experiment-name="{{item.name}}" type="{{item.type}}" pay="{{item.pay}}" duration="{{item.duration}}" publisher="{{item.publisher}}" picture="{{item.picture}}"></experiment-brief>
+    <experiment-brief class="{{'brief-image-' + index}}" experimentId="{{item.experiment_id}}" index="{{index}}" experiment-name="{{item.title}}" type="{{item.type}}" pay="{{item.pay}}" duration="{{item.duration}}" publisher="{{item.publisher_name}}" picture="{{item.user.picture}}"></experiment-brief>
   </view>
-</scroll-view>
+  <view wx:if="{{!experimentsInfo.length}}" class="list-nothing">
+    <view class="list-nothing-text">暂无该类实验哦，晚点再来看看哈</view>
+  </view>
+</view>

@@ -2,11 +2,14 @@ page {
   height: 100%;
 }
 .index-top-info {
-  height: 12%;
-  background-color: #6476DB;
+  z-index: 999;
+  position: sticky;
+  top: 0;
   display: flex;
   align-items: center;
-  margin-bottom: -2rpx;
+  height: 12%;
+  background-color: #6476DB;
+  border: 1rpx solid #6476DB
   /* 解决元素间的间隙 */
 }
 .top-bg {

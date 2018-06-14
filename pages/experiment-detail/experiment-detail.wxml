@@ -1,6 +1,6 @@
 <view style="height: 100%;">
   <view class="index-top-info">
-    <image class="index-top-picture" src="{{url}}" />
+    <image class="index-top-picture" src="{{experimentsInfo.user.picture}}" />
     <text class="index-top-name">{{experimentsInfo.publisher_name}}</text>
   </view>
   <view class="line-css"></view>
@@ -35,7 +35,7 @@
     </view>
     <view class="detail-item">
       <text>报名方式:</text>
-      <text>{{experimentsInfo.others}}</text>
+      <text>{{experimentsInfo.application}}</text>
     </view>
   </view>
   <button>标记为我已预约</button>

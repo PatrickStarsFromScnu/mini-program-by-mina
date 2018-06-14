@@ -1,4 +1,4 @@
-<view class="brief">
+<view class="brief" bindtap="getExperimentInfo">
   <view class="brief-left">
     <image class="brief-image" src="{{load ? picture : defaultPicture}}" />
     <text class="brief-publisher">{{publisher}}</text>

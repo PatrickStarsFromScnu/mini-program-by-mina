@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/sigin/sigin",
+    "siginPage/sigin/sigin",
     "pages/index/index",
     "pages/experiment-type/experiment-type",
     "pages/my-experiments/my-experiments",

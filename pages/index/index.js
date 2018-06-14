@@ -1,4 +1,5 @@
 const getAllExperiments = require('../../api/data').getAllExperiments
+const checkAuthority = require('../../utils/util').checkAuthority
 
 Page({
   data: {
@@ -22,11 +23,6 @@ Page({
       url: '../experiment-type/experiment-type'
     })
   },
-  navigateToExperimentDeatil() {
-    wx.navigateTo({
-      url: '../experiment-detail/experiment-detail'
-    })
-  },
   getExperiments(params) {
     let ctx = this
     wx.showLoading()
@@ -42,22 +38,37 @@ Page({
           experimentsInfo: ctx.data.experimentsInfo.concat(res.data.data)
         })
       }
-      // 借助首页的请求，当返回状态码401时，表示登录失效
-      // 删除storage中的token，并提示用户重新登录
-      if (res.data.code === 401) {
-        wx.removeStorageSync('token')
-        wx.showModal({
-          title: '登录已过期',
-          content: '请重新登录小程序',
-          showCancel: false,
-          success: res => {
-            wx.redirectTo({
-              url: '../sigin/sigin'
-            })
-          },
-          fail: err => {
-            console.log('重新登录失败', err)
-          }
+    })
+    .catch(err => {
+      wx.hideLoading()
+      console.log('getExperiments Error: ', err)
+    })
+  },
+  onPullDownRefresh() {
+    let ctx = this
+    wx.showLoading()
+    getAllExperiments({
+      amount: 5, 
+      times: 1
+    })
+    .then(res => {
+      wx.showToast({
+        title: '刷新成功',
+        icon: 'none'
+      })
+      ctx.setData({
+        times: 1
+      })
+      wx.hideLoading()
+      if (res.data.data.length === 0) {
+        ctx.setData({
+          noMoreExperiments: true
+        })
+      } else {
+        // 下拉刷新成功就重置 experimentInfo times
+        ctx.setData({
+          experimentsInfo: res.data.data,
+          noMoreExperiments: false
         })
       }
     })
@@ -66,14 +77,14 @@ Page({
       console.log('getExperiments Error: ', err)
     })
   },
-  getNextExperiments() {
+  onReachBottom() {
     const ctx = this
-    // 实验数目比上次多的话，说明没有请求完，可以继续触发。
+    // 如果没有请求完，可以继续触发。
     if (!ctx.data.noMoreExperiments) {
+      ctx.getExperiments({amount: 5, times: ctx.data.times + 1})
       ctx.setData({
         times: ++ctx.data.times
       })
-      ctx.getExperiments({amount: 5, times: ctx.data.times})
     } else {
       wx.showToast({
         title: '没有更多了哦',

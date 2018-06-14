@@ -1,6 +1,10 @@
+const getExperiment = require('../../api/data').getExpriment
+const app = getApp()
+
 Component({
   behaviors: [],
   properties: {
+    experimentId: Number,
     experimentName: String,
     type: String,
     pay: String,
@@ -12,6 +16,21 @@ Component({
   data: {
     load: false,
     defaultPicture: '../../images/default.png'
+  },
+  methods: {
+    getExperimentInfo() {
+      const ctx = this
+      getExperiment({experiment_id: ctx.properties.experimentId})
+      .then(res => {
+        app.globalData.experimentInfo = res.data.data
+        wx.navigateTo({
+          url: '../../pages/experiment-detail/experiment-detail'
+        })
+      })
+      .catch(err => {
+        console.log('getExperimentInfo Error: ', err)
+      })
+    } 
   },
   ready() {
     // 图片懒加载，通过class找到当前组件的image标签，监听它是否出现在了viewport内。
