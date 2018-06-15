@@ -10,7 +10,6 @@ Page({
   },
   // 获取实验
   getExperiments(params) {
-    wx.showLoading()
     const ctx = this
     getExperimentsByType(params)
     .then(res => {
@@ -51,7 +50,8 @@ Page({
       })
       if (res.data.data.length) {
         ctx.setData({
-          experimentsInfo: res.data.data
+          experimentsInfo: res.data.data,
+          noMore: false
         })
       } else {
         ctx.setData({
@@ -85,6 +85,7 @@ Page({
     ctx.setData({
       type: option.type
     })
+    wx.showLoading()
     ctx.getExperiments({
       type: option.type,
       amount: 8,

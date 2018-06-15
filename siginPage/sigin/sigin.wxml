@@ -1,7 +1,7 @@
-<div class="sigin">
+<view class="sigin">
   <image class="bg" src="../../images/sky.png"></image>
-  <div class="sigin-content">
-    <p class="sigin-content-ch">寻寻被试</p>
-    <p class="sigin-content-en">Find Your Subject Or Experiment</p>
-  </div>
-</div>
+  <view class="sigin-content">
+    <text class="sigin-content-ch">寻寻被试</text>
+    <text class="sigin-content-en">Find Your Subject Or Experiment</text>
+  </view>
+</view>

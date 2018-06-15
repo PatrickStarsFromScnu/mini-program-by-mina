@@ -23,7 +23,11 @@ function request (method, url, data) {
         // 当返回状态码401时，表示登录过期或失效
         // 删除storage中的token，并提示用户重新登录
         util.checkAuthority(res)
-        resolve(res)
+        if (res.statusCode === 200 || res.statusCode === 304 || res.statusCode === 301 || res.statusCode === 302) {
+          resolve(res)
+        } else {
+          reject(res)
+        }
       },
       fail: err => {
         reject(err)

@@ -1,9 +1,11 @@
 const getMyExperiments = require('../../api/data').getMyExperiments
 const getMySubsciption = require('../../api/data').getMySubsciption
+const deleteMyExperiment = require('../../api/data').deleteMyExperiment
 
 Page({
   data: {
-    move: 'light-left',
+    move: 'light-right',
+    picture: '',
     subExperimentsInfo: [],
     pubsubExperimentsInfo: []
   },
@@ -79,8 +81,34 @@ Page({
       url: '../release-experiments/release-experiments'
     })
   },
+  deleteExperiment(e) {
+    const ctx = this
+    const experimentId = e.currentTarget.dataset.experimentid;
+    deleteMyExperiment({
+      experiment_id: experimentId
+    })
+    .then(res => {
+      ctx.getPubExperiments()
+      wx.showToast({
+        title: '删除改实验成功',
+        icon: 'none',
+        duration: 2000
+      })
+    })
+    .catch(err => {
+      wx.showToast({
+        title: '删除失败, 请稍后再尝试',
+        icon: 'none',
+        duration: 3000
+      })
+    })
+  },
   onLoad() {
     const ctx = this
-    ctx.getSubExperiments()
+    let picture = wx.getStorageSync('picture')
+    ctx.setData({
+      picture: picture
+    })
+    ctx.getPubExperiments()
   }
 })

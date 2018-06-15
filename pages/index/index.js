@@ -23,27 +23,6 @@ Page({
       url: '../experiment-type/experiment-type'
     })
   },
-  getExperiments(params) {
-    let ctx = this
-    wx.showLoading()
-    getAllExperiments(params)
-    .then(res => {
-      wx.hideLoading()
-      if (res.data.data.length === 0) {
-        ctx.setData({
-          noMoreExperiments: true
-        })
-      } else {
-        ctx.setData({
-          experimentsInfo: ctx.data.experimentsInfo.concat(res.data.data)
-        })
-      }
-    })
-    .catch(err => {
-      wx.hideLoading()
-      console.log('getExperiments Error: ', err)
-    })
-  },
   onPullDownRefresh() {
     let ctx = this
     wx.showLoading()
@@ -52,20 +31,22 @@ Page({
       times: 1
     })
     .then(res => {
+      wx.hideLoading()
       wx.showToast({
         title: '刷新成功',
-        icon: 'none'
+        icon: 'none',
+        duration: 3000
       })
+      // 重置 times
       ctx.setData({
         times: 1
       })
-      wx.hideLoading()
       if (res.data.data.length === 0) {
         ctx.setData({
           noMoreExperiments: true
         })
       } else {
-        // 下拉刷新成功就重置 experimentInfo times
+        // 下拉刷新成功就重置 experimentInfo noMoreExperiments
         ctx.setData({
           experimentsInfo: res.data.data,
           noMoreExperiments: false
@@ -81,7 +62,25 @@ Page({
     const ctx = this
     // 如果没有请求完，可以继续触发。
     if (!ctx.data.noMoreExperiments) {
-      ctx.getExperiments({amount: 5, times: ctx.data.times + 1})
+      getAllExperiments({amount: 5, times: ctx.data.times + 1})
+      .then(res => {
+        if (res.data.data.length === 0) {
+          ctx.setData({
+            noMoreExperiments: true
+          })
+        } else {
+          ctx.setData({
+            experimentsInfo: ctx.data.experimentsInfo.concat(res.data.data)
+          })
+        }
+      })
+      .catch(err => {
+        wx.showToast({
+          title: '加载更多失败！',
+          icon: 'none'
+        })
+        console.log('getExperiments Error: ', err)
+      })
       ctx.setData({
         times: ++ctx.data.times
       })
@@ -110,6 +109,23 @@ Page({
         })
       }
     })
-    ctx.getExperiments({amount: 5, times: 1})
+    wx.showLoading()
+    getAllExperiments({amount: 5, times: 1})
+    .then(res => {
+      wx.hideLoading()
+      if (res.data.data.length === 0) {
+        ctx.setData({
+          noMoreExperiments: true
+        })
+      } else {
+        ctx.setData({
+          experimentsInfo: res.data.data
+        })
+      }
+    })
+    .catch(err => {
+      wx.hideLoading()
+      console.log('getExperiments Error: ', err)
+    })
   }
 })

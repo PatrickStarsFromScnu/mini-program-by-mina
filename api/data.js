@@ -31,11 +31,21 @@ const getMySubsciption = params => {
   return request('GET', `${baseUrl}/subject/getMySubsciption`, params)
 }
 
+const addExperiment = params => {
+  return request('POST', `${baseUrl}/examiner/addExperiment`, params)
+}
+
+const deleteMyExperiment = params => {
+  return request('POST', `${baseUrl}/examiner/deleteMyExperiment`, params)
+}
+
 module.exports = {
   login,
   getAllExperiments,
   getExpriment,
   getExperimentsByType,
   getMyExperiments,
-  getMySubsciption
+  getMySubsciption,
+  addExperiment,
+  deleteMyExperiment
 }

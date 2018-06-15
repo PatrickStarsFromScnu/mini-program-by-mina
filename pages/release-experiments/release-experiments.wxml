@@ -1,9 +1,9 @@
 <view height="100%">
   <view class="release-experiment-form">
-  <form>
+  <form bindsubmit="PubExperiment">
     <view class="form-item">
       <span>实验标题：</span>
-      <input placeholder='单行输入'></input>
+      <input name="title" placeholder='单行输入'></input>
     </view>
     <view class="form-item">
       <span style='float:left'>实验类型：</span>
@@ -19,30 +19,34 @@
     </view>
     <view class="form-item">
       <span>实验时长：</span>
-      <input placeholder='单行输入'></input>
+      <input name="duration" placeholder='如10（单位为min）'></input>
     </view>
     <view class="form-item">
-      <span>实验地点：</span>
-      <textarea placeholder='多行输入'></textarea> 
+      <span>报酬(元)：</span>
+      <input name="pay" placeholder='如15'></input>
+    </view>
+    <view class="form-item">
+      <span>实验地点：</span> 
+      <textarea name="position" placeholder='多行输入'></textarea> 
     </view>
     <view class="form-item">
       <span>实验要求：</span>
-      <textarea placeholder='多行输入'></textarea>
+      <textarea name="request" placeholder='多行输入'></textarea>
     </view>
     <view class="form-item">
       <span>时间段：</span>
-      <textarea placeholder='多行输入'></textarea>
+      <textarea name="period" placeholder='如 11:20~11:30, 11:40~11:50'></textarea>
     </view>
     <view class="form-item">
       <span>报名方式：</span>
-      <textarea placeholder='多行输入'></textarea>
+      <textarea name="application" placeholder='如短信报名：156xxx'></textarea>
     </view>
     <view class="form-item">
       <span>其他：</span>
-      <textarea placeholder='多行输入'></textarea>
+      <textarea name="others" placeholder='多行输入'></textarea>
     </view>
+    <button formType="submit">发布</button>
     </form>
-    <button>发布</button>
   </view>
 </view>
    
