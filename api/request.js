@@ -1,5 +1,11 @@
 const util = require('../utils/util')
 
+/**
+ * 通过promise 封装 request 用于请求
+ * 将token加入头部
+ * 检查登录是否过期 
+ */
+
 function request (method, url, data) {
   let token = ''
   if (util.isLowerCase(method)) {

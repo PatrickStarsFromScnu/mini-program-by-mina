@@ -34,6 +34,7 @@ Component({
   },
   ready() {
     // 图片懒加载，通过class找到当前组件的image标签，监听它是否出现在了viewport内。
+    // .brief-image-index 放在组件experiment-brief上
     const ctx = this
     let className = '.brief-image-' + ctx.properties.index
     wx.createIntersectionObserver().relativeToViewport().observe(className, res => {

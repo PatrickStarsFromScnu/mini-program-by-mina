@@ -19,6 +19,7 @@ Page({
       move: 'light-left'
     })
   },
+  // 获取我发布的实验    还没弄好，返回的数据不对。
   getPubExperiments(tips) {
     const ctx = this
     const userId = wx.getStorageSync('userId')
@@ -36,6 +37,7 @@ Page({
       console.log('getPubExperiments Error: ', err)
     })
   },
+  // 获取我订阅的实验 
   getSubExperiments(tips) {
     const ctx = this
     const userId = wx.getStorageSync('userId')
@@ -70,6 +72,7 @@ Page({
         })
       }
     }
+    // 判断处于哪个子页面，作相应的下拉刷新
     if (ctx.data.move === 'light-left') {
       ctx.getPubExperiments(tips)
     } else {
