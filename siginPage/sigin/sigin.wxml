@@ -3,5 +3,8 @@
   <view class="sigin-content">
     <text class="sigin-content-ch">寻寻被试</text>
     <text class="sigin-content-en">Find Your Subject Or Experiment</text>
+    <view wx:if="{{!authDeny}}" class="sigin-content-modal">
+      <button class="sigin-content-modal-btn" open-type="getUserInfo" bindgetuserinfo="myGetUserInfo">登录</button>
+    </view>
   </view>
 </view>

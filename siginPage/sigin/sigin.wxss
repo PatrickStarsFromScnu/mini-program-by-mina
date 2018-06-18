@@ -41,3 +41,14 @@ page {
   color: white;
   font-size: 24rpx;
 }
+
+.sigin-content-modal {
+  margin-top: 100rpx;
+  width: 100%;
+}
+
+.sigin-content-modal-btn {
+  width: 60%;
+  color: #fff;
+  background-color: rgb(119, 204, 70)
+}
