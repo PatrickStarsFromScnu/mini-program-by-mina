@@ -1,5 +1,7 @@
 const getAllExperiments = require('../../api/data').getAllExperiments
+const getMySubsciptionId = require('../../api/data').getMySubsciptionId
 const checkAuthority = require('../../utils/util').checkAuthority
+const app = getApp()
 
 Page({
   data: {
@@ -126,6 +128,18 @@ Page({
     .catch(err => {
       wx.hideLoading()
       console.log('getExperiments Error: ', err)
+    })
+    const userId = wx.getStorageSync('userId')
+    getMySubsciptionId({user_id: userId})
+    .then(res => {
+      let idArr = [] // 已预约的实验id
+      res.data.data.forEach(item => {
+        idArr.push(item.experiment_id)
+      })
+      app.globalData.idArr = idArr
+    })
+    .catch(err => {
+      console.log('getMySubsciptionId Error: ', err)
     })
   }
 })

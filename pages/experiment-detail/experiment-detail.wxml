@@ -38,6 +38,6 @@
       <text>{{experimentsInfo.application}}</text>
     </view>
   </view>
-  <button>标记为我已预约</button>
-  <text class="note">通过短信预约成功后，建议添加至我的预约实验</text>
+  <button class="{{subscribed ? 'gray':'green'}}" bindtap="manageSubExperiment">{{subscribed ? '取消预约':'标记未我已预约'}}</button>
+  <text class="note">{{subscribed ? '先与主试联系取消预约，再点击此按钮删除记录':'先通过短信预约，成功后再添加至我的预约实验'}}</text>
 </view>

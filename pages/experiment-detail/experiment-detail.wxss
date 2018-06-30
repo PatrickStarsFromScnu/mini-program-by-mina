@@ -58,11 +58,16 @@ page {
   margin: 0 10rpx;
 }
 button {
-  background-color: #8BC34A;
   color:white;
   height: 100rpx;
   width: 646rpx;
   margin-top: 40rpx;
+}
+.green {
+  background-color: #8BC34A;
+}
+.gray {
+  background-color: rgb(192, 192, 192);
 }
 .note {
   font-size: 28rpx;

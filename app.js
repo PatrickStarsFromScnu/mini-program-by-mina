@@ -8,6 +8,7 @@ App({
     console.log('App Hide')
   },
   globalData: {
-    experimentInfo: {}
+    experimentInfo: {},
+    idArr: [] // 已预约的实验的id
   }
 })

@@ -16,7 +16,7 @@
     <text>已预约且还在进行的实验</text>
   </view>
   <view wx:for="{{subExperimentsInfo}}" wx:key="index">
-    <experiment-brief class="{{'brief-image-' + index}}" experimentId="{{item.experiment_id}}" index="{{index}}" experiment-name="{{item.title}}" type="{{item.type}}" pay="{{item.pay}}" duration="{{item.duration}}" publisher="{{item.publisher_name}}" picture="{{item.user.picture}}"></experiment-brief>
+    <experiment-brief class="{{'brief-image-' + index}}" experimentId="{{item.experiment_id}}" index="{{index}}" experiment-name="{{item.experiment.title}}" type="{{item.experiment.type}}" pay="{{item.experiment.pay}}" duration="{{item.experiment.duration}}" publisher="{{item.experiment.publisher_name}}" picture="{{item.user.picture}}"></experiment-brief>
   </view>
 </view>
 <view hidden="{{move === 'light-left'}}">

@@ -28,7 +28,7 @@ const getMyExperiments = params => {
 }
 
 const getMySubsciption = params => {
-  return request('GET', `${baseUrl}/subject/getMySubsciption`, params)
+  return request('GET', `${baseUrl}/subject/getMySubscription`, params)
 }
 
 const addExperiment = params => {
@@ -39,6 +39,18 @@ const deleteMyExperiment = params => {
   return request('POST', `${baseUrl}/examiner/deleteMyExperiment`, params)
 }
 
+const addSubExperiment = params => {
+  return request('POST', `${baseUrl}/subject/addSubscription`, params)
+}
+
+const getMySubsciptionId = params => {
+  return request('GET', `${baseUrl}/subject/getMySubscriptionId`, params)
+}
+
+const deleteSubscription = params => {
+  return request('POST', `${baseUrl}/subject/deleteSubscription`, params)
+}
+
 module.exports = {
   login,
   getAllExperiments,
@@ -47,5 +59,8 @@ module.exports = {
   getMyExperiments,
   getMySubsciption,
   addExperiment,
-  deleteMyExperiment
+  deleteMyExperiment,
+  addSubExperiment,
+  getMySubsciptionId,
+  deleteSubscription
 }

@@ -27,12 +27,12 @@ page {
 }
 .light-left {
   position: absolute;
-  bottom: 0;
+  top: 106rpx;
   left: 12%;
 }
 .light-right {
   position: absolute;
-  bottom: 0;
+  top: 106rpx;
   right: 12%;
 }
 .half-col {
