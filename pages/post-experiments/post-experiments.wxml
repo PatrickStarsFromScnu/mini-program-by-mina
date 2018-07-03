@@ -8,11 +8,11 @@
       </view>
       <view class="post-experiment-input">
         <text>时长：</text>
-        <input name="duration" placeholder="请输入实验总时长" />
+        <input name="duration" placeholder="请输入总时长(min)，如15" />
       </view>
       <view class="post-experiment-input">
         <text>报酬：</text>
-        <input name="pay" placeholder="请输入总报酬" />
+        <input name="pay" placeholder="请输入总报酬(元)，如10" />
       </view>
       <view>
         <picker bindchange="bindPickerChange" value="{{index}}" range="{{typeArray}}">
@@ -29,7 +29,7 @@
       </view>
       <view class="post-experiment-textarea">
         <text>时段：</text>
-        <textarea name="period" placeholder="请输入时间段" />
+        <textarea name="period" placeholder="请输入时间段，如11:20" />
       </view>
     </view>
     <view hidden="{{step !== 3}}" class="post-experiment-step">

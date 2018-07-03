@@ -14,17 +14,19 @@ Page({
     const data = e.detail.value
     if (ctx.data.step === 1) {
       if (data.title.trim() === '' || data.duration.trim() === ''||data.pay.trim() === '') {
-        ctx.warnTips('请填将信息填写完整！')
+        ctx.warnTips()
         return
       }
+      data.duration = data.duration.replace(/min/, '')
+      data.pay = data.pay.replace(/元/, '')
     } else if (ctx.data.step === 2) {
       if (data.position.trim() === '' || data.period.trim() === '') {
-        ctx.warnTips('请填将信息填写完整！')
+        ctx.warnTips()
         return
       }
     } else if (ctx.data.step === 3) {
       if (data.application.trim() === '') {
-        ctx.warnTips('请填将信息填写完整！')
+        ctx.warnTips()
         return
       }
     } else if (ctx.data.step === 4) {
@@ -82,10 +84,10 @@ Page({
       index: e.detail.value
     })
   },
-  warnTips: function(content) {
+  warnTips: function() {
     wx.showModal({
       title: '错误',
-      content: content,
+      content: '请将信息填写完整！',
       showCancel: false
     })
   },
