@@ -1,0 +1,58 @@
+.post-experiment-step {
+  box-sizing: border-box;
+  padding: 0 36rpx;
+  border-bottom: 1rpx solid rgb(238, 235, 235);
+}
+.post-experiment-input {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100rpx;
+  border-bottom: 1rpx solid rgb(238, 235, 235);
+  margin-top: 10rpx
+}
+.post-experiment-input text {
+  width: 120rpx;
+  font-size: 34rpx;
+}
+.picker {
+  font-size: 34rpx;
+  margin: 30rpx 0;
+}
+.picker text {
+  margin-left: 20rpx;
+  font-size: 32rpx;
+}
+.post-experiment-input input {
+  flex: 1;
+  font-size: 32rpx;
+}
+.post-experiment-textarea {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-bottom: 1rpx solid rgb(238, 235, 235);
+  margin-top: 10rpx;
+  padding-top: 20rpx;
+}
+.post-experiment-textarea textarea {
+  flex: 1;
+  font-size: 32rpx;
+}
+.post-experiment-textarea text {
+  width: 120rpx;
+  font-size: 34rpx;
+}
+.post-experiment-tips {
+  width: 90%;
+  margin: 50rpx auto;
+  text-align: center;
+  font-size: 30rpx;
+  color: #b6b6b6
+}
+.post-experiment-button {
+  width: 82%;
+  color: #fff;
+  border: none;
+  background-color: #8BC34A
+}

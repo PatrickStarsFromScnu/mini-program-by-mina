@@ -82,7 +82,7 @@ Page({
   },
   navigateToReleaseExperiments() {
     wx.navigateTo({
-      url: '../release-experiments/release-experiments'
+      url: '../post-experiments/post-experiments'
     })
   },
   deleteExperiment(e) {

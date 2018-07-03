@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "my-process": "../../components/my-process/my-process"
+  },
+  "navigationBarBackgroundColor": "#6476DB",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "发布实验",
+  "backgroundTextStyle": "light"
+}

@@ -1,0 +1,32 @@
+.my-process {
+  background-color: #6476DB
+}
+.my-process-step {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 140rpx;
+  padding: 0 60rpx;
+  border: none;
+}
+.my-process-step-item {
+  width: 38rpx;
+  height: 38rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff;
+  background-color: #6476DB;
+  border: 1rpx solid #fff;
+  border-radius: 50%;
+}
+.active {
+  color: #6476DB;
+  background-color: #fff;
+}
+.line-hor {
+  flex: 1;
+  height: 0;
+  border-top: 1rpx solid #fff;
+}

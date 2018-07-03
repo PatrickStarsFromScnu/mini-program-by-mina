@@ -1,0 +1,57 @@
+<view>
+  <my-process step="{{step}}"/>
+  <form bindsubmit="handleComplete">
+    <view hidden="{{step !== 1}}" class="post-experiment-step">
+      <view class="post-experiment-input">
+        <text>标题：</text>
+        <input name="title" placeholder="请输入实验标题" />
+      </view>
+      <view class="post-experiment-input">
+        <text>时长：</text>
+        <input name="duration" placeholder="请输入实验总时长" />
+      </view>
+      <view class="post-experiment-input">
+        <text>报酬：</text>
+        <input name="pay" placeholder="请输入总报酬" />
+      </view>
+      <view>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{typeArray}}">
+          <view class="picker">
+            类型：<text>{{typeArray[index]}}</text>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view hidden="{{step !== 2}}" class="post-experiment-step">
+      <view class="post-experiment-input">
+        <text>地点：</text>
+        <input name="position" placeholder="请输入实验地点" />
+      </view>
+      <view class="post-experiment-textarea">
+        <text>时段：</text>
+        <textarea name="period" placeholder="请输入时间段" />
+      </view>
+    </view>
+    <view hidden="{{step !== 3}}" class="post-experiment-step">
+      <view class="post-experiment-textarea">
+        <text>要求：</text>
+        <textarea name="request" style="height: 240rpx;" placeholder="请输入实验要求（选填）" />
+      </view>
+      <view class="post-experiment-textarea">
+        <text>报名：</text>
+        <textarea name="application" style="height: 240rpx;" placeholder="请输入报名方式" />
+      </view>
+    </view>
+    <view hidden="{{step !== 4}}" class="post-experiment-step">
+      <view class="post-experiment-textarea">
+        <text>其他：</text>
+        <textarea name="others" placeholder="请输入要补充的信息（选填）" />
+      </view>
+    </view>
+    <view class="post-experiment-tips">
+      除了标明为选填的，其他内容必须填写信息，填写完毕点击下一步或完成
+    </view>
+    <button class="post-experiment-button" formType="submit">{{step === 4 ? '完成':'下一步'}}</button>
+  </form>
+  
+</view>

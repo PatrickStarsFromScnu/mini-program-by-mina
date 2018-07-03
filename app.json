@@ -5,6 +5,7 @@
     "pages/experiment-type/experiment-type",
     "pages/my-experiments/my-experiments",
     "pages/experiment-list/experiment-list",
+    "pages/post-experiments/post-experiments",
     "pages/release-experiments/release-experiments",
     "pages/experiment-detail/experiment-detail"
   ],
