@@ -16,11 +16,12 @@ function request (method, url, data) {
   } catch (err) {
     console.log('此请求未取得token，若不是登录请求，请查找原因：', err)
   }
+  let params = data ? data : {}
   return new Promise((resolve, reject) => {
     wx.request({
       url,
       method,
-      data,
+      data: params,
       header: {
         'Authorization': 'Bearer ' + token
       },

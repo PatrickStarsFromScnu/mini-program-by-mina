@@ -36,8 +36,8 @@ Page({
     const ctx = this
     getExperimentsByType({
       type: ctx.data.type,
-      amount: 8,
-      times: 1
+      limit: 8,
+      offset: 0
     })
     .then(res => {
       wx.hideLoading()
@@ -70,8 +70,8 @@ Page({
     if (!ctx.data.noMore) {
       ctx.getExperiments({
         type: ctx.data.type,
-        amount: 8,
-        times: ctx.data.times
+        limit: 8,
+        offset: (ctx.data.times-1)*8
       })
     } else {
       wx.showToast({
@@ -88,8 +88,8 @@ Page({
     wx.showLoading()
     ctx.getExperiments({
       type: option.type,
-      amount: 8,
-      times: ctx.data.times
+      limit: 8,
+      offset: (ctx.data.times-1)*8
     })
   }
 })

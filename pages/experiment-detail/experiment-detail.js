@@ -1,5 +1,6 @@
 const addSubExperiment = require('../../api/data').addSubExperiment
 const deleteSubscription = require('../../api/data').deleteSubscription
+const getMySubsciptionId = require('../../api/data').getMySubsciptionId
 const app = getApp()
 
 Page({
@@ -29,6 +30,18 @@ Page({
               })
               ctx.setData({
                 subscribed: false
+              })
+              // 取消成功后更新globalData中的idArr
+              getMySubsciptionId({user_id: userId})
+              .then(res => {
+                let idArr = [] // 已预约的实验id
+                res.data.data.forEach(item => {
+                  idArr.push(item.experiment_id)
+                })
+                app.globalData.idArr = idArr
+              })
+              .catch(err => {
+                console.log('getMySubsciptionId Error: ', err)
               })
             })
             .catch(err => {
@@ -62,6 +75,18 @@ Page({
               })
               ctx.setData({
                 subscribed: true
+              })
+              // 预约成功后更新globalData中的idArr
+              getMySubsciptionId({user_id: userId})
+              .then(res => {
+                let idArr = [] // 已预约的实验id
+                res.data.data.forEach(item => {
+                  idArr.push(item.experiment_id)
+                })
+                app.globalData.idArr = idArr
+              })
+              .catch(err => {
+                console.log('getMySubsciptionId Error: ', err)
               })
             })
             .catch(err => {

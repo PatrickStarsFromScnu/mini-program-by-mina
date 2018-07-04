@@ -29,8 +29,8 @@ Page({
     let ctx = this
     wx.showLoading()
     getAllExperiments({
-      amount: 5, 
-      times: 1
+      limit: 5, 
+      offset: 0
     })
     .then(res => {
       wx.hideLoading()
@@ -64,7 +64,7 @@ Page({
     const ctx = this
     // 如果没有请求完，可以继续触发。
     if (!ctx.data.noMoreExperiments) {
-      getAllExperiments({amount: 5, times: ctx.data.times + 1})
+      getAllExperiments({limit: 5, offset: (ctx.data.times - 1)*5})
       .then(res => {
         if (res.data.data.length === 0) {
           ctx.setData({
@@ -112,7 +112,7 @@ Page({
       }
     })
     wx.showLoading()
-    getAllExperiments({amount: 5, times: 1})
+    getAllExperiments({limit: 5, offset: 0})
     .then(res => {
       wx.hideLoading()
       if (res.data.data.length === 0) {
