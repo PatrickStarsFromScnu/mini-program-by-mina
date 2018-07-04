@@ -35,7 +35,7 @@ Page({
               getMySubsciptionId({user_id: userId})
               .then(res => {
                 let idArr = [] // 已预约的实验id
-                res.data.data.forEach(item => {
+                res.data.forEach(item => {
                   idArr.push(item.experiment_id)
                 })
                 app.globalData.idArr = idArr
@@ -80,7 +80,7 @@ Page({
               getMySubsciptionId({user_id: userId})
               .then(res => {
                 let idArr = [] // 已预约的实验id
-                res.data.data.forEach(item => {
+                res.data.forEach(item => {
                   idArr.push(item.experiment_id)
                 })
                 app.globalData.idArr = idArr

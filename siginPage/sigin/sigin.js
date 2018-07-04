@@ -13,7 +13,7 @@ Page({
       // 存放token并跳转到首页
       console.log(res)
       wx.hideLoading()
-      let data = res.data.data
+      let data = res.data
       wx.setStorage({
         key: 'token',
         data: data.token,

@@ -30,7 +30,7 @@ Page({
     .then(res => {
       tips && tips.success()
       ctx.setData({
-        pubExperimentsInfo: res.data.data
+        pubExperimentsInfo: res.data
       })
     })
     .catch(err => {
@@ -48,7 +48,7 @@ Page({
     .then(res => {
       tips && tips.success()
       ctx.setData({
-        subExperimentsInfo: res.data.data
+        subExperimentsInfo: res.data
       })
     })
     .catch(err => {

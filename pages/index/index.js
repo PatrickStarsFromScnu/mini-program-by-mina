@@ -43,14 +43,14 @@ Page({
       ctx.setData({
         times: 1
       })
-      if (res.data.data.length === 0) {
+      if (res.data.length === 0) {
         ctx.setData({
           noMoreExperiments: true
         })
       } else {
         // 下拉刷新成功就重置 experimentInfo noMoreExperiments
         ctx.setData({
-          experimentsInfo: res.data.data,
+          experimentsInfo: res.data,
           noMoreExperiments: false
         })
       }
@@ -66,13 +66,13 @@ Page({
     if (!ctx.data.noMoreExperiments) {
       getAllExperiments({limit: 5, offset: ctx.data.times*5})
       .then(res => {
-        if (res.data.data.length === 0) {
+        if (res.data.length === 0) {
           ctx.setData({
             noMoreExperiments: true
           })
         } else {
           ctx.setData({
-            experimentsInfo: ctx.data.experimentsInfo.concat(res.data.data)
+            experimentsInfo: ctx.data.experimentsInfo.concat(res.data)
           })
         }
       })
@@ -115,13 +115,13 @@ Page({
     getAllExperiments({limit: 5, offset: 0})
     .then(res => {
       wx.hideLoading()
-      if (res.data.data.length === 0) {
+      if (res.data.length === 0) {
         ctx.setData({
           noMoreExperiments: true
         })
       } else {
         ctx.setData({
-          experimentsInfo: res.data.data
+          experimentsInfo: res.data
         })
       }
     })
@@ -133,7 +133,7 @@ Page({
     getMySubsciptionId({user_id: userId})
     .then(res => {
       let idArr = [] // 已预约的实验id
-      res.data.data.forEach(item => {
+      res.data.forEach(item => {
         idArr.push(item.experiment_id)
       })
       app.globalData.idArr = idArr

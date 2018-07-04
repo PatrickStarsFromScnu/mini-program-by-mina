@@ -22,7 +22,7 @@ Component({
       const ctx = this
       getExperiment({experiment_id: ctx.properties.experimentId})
       .then(res => {
-        app.globalData.experimentInfo = res.data.data
+        app.globalData.experimentInfo = res.data
         wx.navigateTo({
           url: '../../pages/experiment-detail/experiment-detail'
         })

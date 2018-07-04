@@ -14,10 +14,10 @@ Page({
     getExperimentsByType(params)
     .then(res => {
       wx.hideLoading()
-      if (res.data.data.length) {
+      if (res.data.length) {
         ctx.setData({
           times: ++ ctx.data.times,
-          experimentsInfo: ctx.data.experimentsInfo.concat(res.data.data)
+          experimentsInfo: ctx.data.experimentsInfo.concat(res.data)
         })
       } else {
         ctx.setData({
@@ -48,9 +48,9 @@ Page({
       ctx.setData({
         times: 1
       })
-      if (res.data.data.length) {
+      if (res.data.length) {
         ctx.setData({
-          experimentsInfo: res.data.data,
+          experimentsInfo: res.data,
           noMore: false
         })
       } else {
