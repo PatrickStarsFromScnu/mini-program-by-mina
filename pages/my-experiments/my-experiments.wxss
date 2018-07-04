@@ -69,3 +69,12 @@ page {
   justify-content: flex-end;
   align-items: center;
 }
+
+.no-experiments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300rpx;
+  font-size: 30rpx;
+  color: rgb(148, 147, 147)
+}

@@ -11,6 +11,7 @@ Page({
     login(params)
     .then( res => {
       // 存放token并跳转到首页
+      console.log(res)
       wx.hideLoading()
       let data = res.data.data
       wx.setStorage({
@@ -24,7 +25,7 @@ Page({
         key: 'userId',
         data: data.userId,
         success: () => {
-          console.log('userId 存储成功')
+          console.log('userId 存储成功', data.userId)
         }
       })
       wx.redirectTo({

@@ -64,7 +64,7 @@ Page({
     const ctx = this
     // 如果没有请求完，可以继续触发。
     if (!ctx.data.noMoreExperiments) {
-      getAllExperiments({limit: 5, offset: (ctx.data.times - 1)*5})
+      getAllExperiments({limit: 5, offset: ctx.data.times*5})
       .then(res => {
         if (res.data.data.length === 0) {
           ctx.setData({

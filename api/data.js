@@ -8,7 +8,7 @@ const baseUrl = 'https://www.holyzheng.top/api'
  * 管理，并将异步处理方式由 回调 改为 链式 的方式处理
 */
 
-// RESTful api 改进 const baseUrl = 'https://www.holyzheng.top/api' 必要时候加上版本 /v1
+// RESTful api
 
 const login = params => {
   return request('POST', `${baseUrl}/auth/login`, params)

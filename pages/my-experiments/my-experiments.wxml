@@ -15,16 +15,26 @@
   <view class="my-scroll-text">
     <text>已预约且还在进行的实验</text>
   </view>
-  <view wx:for="{{subExperimentsInfo}}" wx:key="index">
-    <experiment-brief class="{{'brief-image-' + index}}" experimentId="{{item.experiment_id}}" index="{{index}}" experiment-name="{{item.experiment.title}}" type="{{item.experiment.type}}" pay="{{item.experiment.pay}}" duration="{{item.experiment.duration}}" publisher="{{item.experiment.publisher_name}}" picture="{{item.user.picture}}"></experiment-brief>
+  <block wx:if="{{subExperimentsInfo.lenght}}">
+    <view wx:for="{{subExperimentsInfo}}" wx:key="index">
+      <experiment-brief class="{{'brief-image-' + index}}" experimentId="{{item.experiment_id}}" index="{{index}}" experiment-name="{{item.experiment.title}}" type="{{item.experiment.type}}" pay="{{item.experiment.pay}}" duration="{{item.experiment.duration}}" publisher="{{item.experiment.publisher_name}}" picture="{{item.experiment.user.picture}}"></experiment-brief>
+    </view>
+  </block>
+  <view class="no-experiments" wx:else>
+    <text>暂无实验</text>
   </view>
 </view>
 <view hidden="{{move === 'light-left'}}">
   <button class="my-big-button" bindtap="navigateToReleaseExperiments">我要发布</button>
-  <view wx:for="{{pubExperimentsInfo}}" wx:key="index">
-    <view class="small-button-around">
-        <button class="my-small-button" data-experimentid="{{item.experiment_id}}" bindtap="deleteExperiment">删除该实验</button>
+  <block wx:if="{{pubExperimentsInfo.length}}">
+    <view wx:for="{{pubExperimentsInfo}}" wx:key="index">
+      <view class="small-button-around">
+          <button class="my-small-button" data-experimentid="{{item.experiment_id}}" bindtap="deleteExperiment">删除该实验</button>
+      </view>
+      <experiment-brief class="{{'brief-image-' + index}}" experimentId="{{item.experiment_id}}" index="{{index}}" experiment-name="{{item.title}}" type="{{item.type}}" pay="{{item.pay}}" duration="{{item.duration}}" publisher="{{item.publisher_name}}" picture="{{picture}}"></experiment-brief>
     </view>
-    <experiment-brief class="{{'brief-image-' + index}}" experimentId="{{item.experiment_id}}" index="{{index}}" experiment-name="{{item.title}}" type="{{item.type}}" pay="{{item.pay}}" duration="{{item.duration}}" publisher="{{item.publisher_name}}" picture="{{picture}}"></experiment-brief>
+  </block>
+  <view class="no-experiments" wx:else>
+    <text>您暂无发布实验</text>
   </view>
 </view>

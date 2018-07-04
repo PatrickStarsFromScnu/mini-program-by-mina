@@ -11,22 +11,31 @@ Page({
   },
   handleComplete: function(e) {
     const ctx = this
+    console.log(ctx.data.step)
     const data = e.detail.value
     if (ctx.data.step === 1) {
       if (data.title.trim() === '' || data.duration.trim() === ''||data.pay.trim() === '') {
-        ctx.warnTips()
+        ctx.warnTips('请将信息填写完整')
         return
       }
-      data.duration = data.duration.replace(/min/, '')
-      data.pay = data.pay.replace(/元/, '')
+      let pay = data.pay.trim()
+      if (pay.match(/\D/g)) {
+        ctx.warnTips('报酬只能输入数字')
+        return
+      }
+      let duration = data.duration.trim()
+      if (duration.match(/\D/g)) {
+        ctx.warnTips('时长只能输入数字')
+        return
+      }
     } else if (ctx.data.step === 2) {
       if (data.position.trim() === '' || data.period.trim() === '') {
-        ctx.warnTips()
+        ctx.warnTips('请将信息填写完整')
         return
       }
     } else if (ctx.data.step === 3) {
       if (data.application.trim() === '') {
-        ctx.warnTips()
+        ctx.warnTips('请将信息填写完整')
         return
       }
     } else if (ctx.data.step === 4) {
@@ -84,10 +93,10 @@ Page({
       index: e.detail.value
     })
   },
-  warnTips: function() {
+  warnTips: function(content) {
     wx.showModal({
       title: '错误',
-      content: '请将信息填写完整！',
+      content,
       showCancel: false
     })
   },

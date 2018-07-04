@@ -15,7 +15,12 @@
         <text class="icon icon-text">我的实验</text>
     </view> 
   </view>
-  <view wx:for="{{experimentsInfo}}" wx:key="index">
-      <experiment-brief class="{{'brief-image-' + index}}" experimentId="{{item.experiment_id}}" index="{{index}}" experiment-name="{{item.title}}" type="{{item.type}}" pay="{{item.pay}}" duration="{{item.duration}}" publisher="{{item.publisher_name}}" picture="{{item.user.picture}}"></experiment-brief>
+  <block wx:if="{{experimentsInfo.length > 0}}">
+    <view wx:for="{{experimentsInfo}}" wx:key="index">
+        <experiment-brief class="{{'brief-image-' + index}}" experimentId="{{item.experiment_id}}" index="{{index}}" experiment-name="{{item.title}}" type="{{item.type}}" pay="{{item.pay}}" duration="{{item.duration}}" publisher="{{item.publisher_name}}" picture="{{item.user.picture}}"></experiment-brief>
+    </view>
+  </block>
+  <view class="no-experiments" wx:else>
+    <text>暂无实验哦，稍后再下拉刷新试试~</text>
   </view>
 </view>
