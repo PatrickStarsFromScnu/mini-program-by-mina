@@ -15,7 +15,7 @@
   <view class="my-scroll-text">
     <text>已预约且还在进行的实验</text>
   </view>
-  <block wx:if="{{subExperimentsInfo.lenght}}">
+  <block wx:if="{{subExperimentsInfo.length}}">
     <view wx:for="{{subExperimentsInfo}}" wx:key="index">
       <experiment-brief class="{{'brief-image-' + index}}" experimentId="{{item.experiment_id}}" index="{{index}}" experiment-name="{{item.experiment.title}}" type="{{item.experiment.type}}" pay="{{item.experiment.pay}}" duration="{{item.experiment.duration}}" publisher="{{item.experiment.publisher_name}}" picture="{{item.experiment.user.picture}}"></experiment-brief>
     </view>
