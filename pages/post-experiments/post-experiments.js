@@ -35,16 +35,21 @@ Page({
       }
     } else if (ctx.data.step === 3) {
       if (data.application.trim() === '') {
+        console.log(data.application)
         ctx.warnTips('请将信息填写完整')
         return
       }
     } else if (ctx.data.step === 4) {
       console.log(data)
-      if (data.request.trim() === '') {
-        data.request = '无'
+      if (data.textRequest.trim() === '') {
+        data.textRequest = '无'
       }
       if (data.others.trim() === '') {
         data.others = '无'
+      }
+      if (data.content.trim() === '') {
+        ctx.warnTips('请将信息填写完整')
+        return
       }
       if (ctx.data.userId === null || ctx.data.userName === null) {
         throw new Error('未获取到userID或userName')
@@ -57,11 +62,12 @@ Page({
         duration: data.duration,
         pay: data.pay,
         position: data.position,
-        request: data.request,
+        request: data.textRequest,
         period: data.period,
         others: data.others,
         time: new Date(),
-        application: data.application
+        application: data.application,
+        content: data.content
       })
       .then(res => {
         wx.showToast({

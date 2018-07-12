@@ -30,6 +30,10 @@
       <text style="font-size: 32rpx; margin: 16rpx 0 0 80rpx">{{experimentsInfo.period}}</text>
     </view>
     <view class="detail-item">
+      <text>实验内容:</text>
+      <text>{{experimentsInfo.content}}</text>
+    </view>
+    <view class="detail-item">
       <text>其他信息:</text>
       <text>{{experimentsInfo.others}}</text>
     </view>

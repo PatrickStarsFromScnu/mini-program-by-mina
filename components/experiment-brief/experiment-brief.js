@@ -30,7 +30,7 @@ Component({
       .catch(err => {
         console.log('getExperimentInfo Error: ', err)
       })
-    } 
+    }
   },
   ready() {
     // 图片懒加载，通过class找到当前组件的image标签，监听它是否出现在了viewport内。

@@ -34,15 +34,19 @@
     </view>
     <view hidden="{{step !== 3}}" class="post-experiment-step">
       <view class="post-experiment-textarea">
-        <text>要求：</text>
-        <textarea name="request" style="height: 240rpx;" placeholder="请输入实验要求（选填）" />
-      </view>
-      <view class="post-experiment-textarea">
         <text>报名：</text>
         <textarea name="application" style="height: 240rpx;" placeholder="请输入报名方式" />
       </view>
+      <view class="post-experiment-textarea">
+        <text>要求：</text>
+        <textarea name="textRequest" style="height: 240rpx;" placeholder="请输入实验要求（选填）" />
+      </view>
     </view>
     <view hidden="{{step !== 4}}" class="post-experiment-step">
+      <view class="post-experiment-textarea">
+        <text>内容：</text>
+        <textarea name="content" placeholder="请输入实验内容" />
+      </view>
       <view class="post-experiment-textarea">
         <text>其他：</text>
         <textarea name="others" placeholder="请输入要补充的信息（选填）" />
