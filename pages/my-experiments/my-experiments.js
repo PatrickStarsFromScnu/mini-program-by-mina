@@ -4,7 +4,7 @@ const deleteMyExperiment = require('../../api/data').deleteMyExperiment
 
 Page({
   data: {
-    move: 'light-right',
+    move: 'light-left',
     picture: '',
     subExperimentsInfo: [],
     pubsubExperimentsInfo: []
@@ -18,7 +18,6 @@ Page({
     this.setData({
       move: 'light-left'
     })
-    this.getSubExperiments()
   },
   // 获取我发布的实验
   getPubExperiments(tips) {
@@ -81,8 +80,16 @@ Page({
     }
   },
   navigateToReleaseExperiments() {
-    wx.navigateTo({
-      url: '../post-experiments/post-experiments'
+    wx.showModal({
+      title: '提示',
+      content: '发布实验服务只提供给心理学院学生，若非心理学院学生发布无关消息，经举报会受到惩罚！',
+      success: function(res) {
+        if (res.confirm) {
+          wx.navigateTo({
+            url: '../post-experiments/post-experiments'
+          })
+        }
+      }
     })
   },
   deleteExperiment(e) {
@@ -114,5 +121,6 @@ Page({
       picture: picture
     })
     ctx.getPubExperiments()
+    ctx.getSubExperiments()
   }
 })

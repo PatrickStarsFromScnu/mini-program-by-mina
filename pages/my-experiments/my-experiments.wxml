@@ -11,7 +11,7 @@
   <view class="light {{move}}"></view>
 </view>
 
-<view hidden="{{move === 'light-right'}}">
+<view wx:if="{{move === 'light-left'}}">
   <view class="my-scroll-text">
     <text>已预约且还在进行的实验</text>
   </view>
@@ -24,7 +24,7 @@
     <text>暂无实验</text>
   </view>
 </view>
-<view hidden="{{move === 'light-left'}}">
+<view wx:if="{{move === 'light-right'}}">
   <button class="my-big-button" bindtap="navigateToReleaseExperiments">我要发布</button>
   <block wx:if="{{pubExperimentsInfo.length}}">
     <view wx:for="{{pubExperimentsInfo}}" wx:key="index">

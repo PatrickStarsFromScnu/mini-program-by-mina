@@ -14,7 +14,7 @@ Page({
     if (ctx.data.subscribed) {
       wx.showModal({
         title: '确认',
-        content: '是否已与主试联系，取消了预约实验？',
+        content: '在取消实验前，你需要先与主试联系，取消该实验，才可取消此标记。是否已与主试联系，取消了预约实验？',
         success: res => {
           if (res.confirm) {
             const userId = wx.getStorageSync('userId')

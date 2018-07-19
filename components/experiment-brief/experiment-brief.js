@@ -38,7 +38,7 @@ Component({
     const ctx = this
     let className = '.brief-image-' + ctx.properties.index
     wx.createIntersectionObserver().relativeToViewport().observe(className, res => {
-      if (res.intersectionRatio > 0) {
+      if (res.intersectionRatio > 0 && !ctx.data.load) {
         ctx.setData({
           load: true
         })
