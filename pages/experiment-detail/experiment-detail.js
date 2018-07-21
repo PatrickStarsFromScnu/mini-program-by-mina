@@ -69,7 +69,7 @@ Page({
             })
             .then(() => {
               wx.showToast({
-                title: '数据库同步成功',
+                title: '标记成功',
                 icon: 'success',
                 duration: 3000
               })

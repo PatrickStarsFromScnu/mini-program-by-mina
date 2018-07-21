@@ -37,7 +37,7 @@ Page({
       console.log('getPubExperiments Error: ', err)
     })
   },
-  // 获取我订阅的实验 还没弄好，返回的数据不对。
+  // 获取我订阅的实验
   getSubExperiments(tips) {
     const ctx = this
     const userId = wx.getStorageSync('userId')
@@ -82,7 +82,7 @@ Page({
   navigateToReleaseExperiments() {
     wx.showModal({
       title: '提示',
-      content: '发布实验服务只提供给心理学院学生，若非心理学院学生发布无关消息，经举报会受到惩罚！',
+      content: '发布实验服务只允许发布与心理学实验有关的信息，若发布无关或不良信息，经举报会进行惩罚哦！',
       success: function(res) {
         if (res.confirm) {
           wx.navigateTo({
