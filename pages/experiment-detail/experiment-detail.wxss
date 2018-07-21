@@ -27,6 +27,7 @@ page {
   height: 2rpx;
   background: #BBBBBB;
   margin-top: 12rpx;
+  box-shadow: 0rpx 0rpx 10rpx #888888;
 }
 .experiment-detail {
   position: relative;
@@ -42,7 +43,11 @@ page {
   color: #101010;
   margin: 0 10rpx;
 }
-.detail-item .detail-item-pay {
+.detail-item .detail-font {
+  font-size: 32rpx;
+  margin: 2rpx 6rpx;
+}
+.detail-item .detail-font-pay {
   font-size: 32rpx;
   color: #E83232;
   margin: 2rpx 6rpx;
@@ -51,6 +56,8 @@ page {
   display: flex;
   flex-direction: column;
   margin-top: 28rpx;
+  padding-bottom: 40rpx;
+  border-bottom: 2rpx dashed rgb(208, 214, 209)
 }
 .detail-item-column text {
   font-size: 36rpx;

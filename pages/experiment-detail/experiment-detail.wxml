@@ -7,39 +7,39 @@
   <view class="experiment-detail">
     <view class="detail-item">
       <text>实验类型:</text>
-      <text>{{experimentsInfo.type}}</text>
+      <text class="detail-font">{{experimentsInfo.type}}</text>
     </view>
     <view class="detail-item">
       <text>实验时长:</text>
-      <text>{{experimentsInfo.duration}}</text>
-    </view>
-    <view class="detail-item">
-      <text>实验地点:</text>
-      <text>{{experimentsInfo.position}}</text>
+      <text class="detail-font">{{experimentsInfo.duration}} min</text>
     </view>
     <view class="detail-item">
       <text>报酬:</text>
-       <text class="detail-item-pay">￥{{experimentsInfo.pay}}</text>
+       <text class="detail-font-pay">￥{{experimentsInfo.pay}}</text>
+    </view>
+    <view class="detail-item-column">
+      <text>实验地点:</text>
+      <text style="font-size: 32rpx; margin: 16rpx 0 0 40rpx">{{experimentsInfo.position}}</text>
     </view>
     <view class="detail-item-column">
       <text>被试要求:</text>
-      <text style="font-size: 32rpx; margin: 16rpx 0 0 80rpx">{{experimentsInfo.request}}</text>
+      <text style="font-size: 32rpx; margin: 16rpx 0 0 40rpx">{{experimentsInfo.request}}</text>
     </view>
     <view class="detail-item-column">
       <text>可选时间段:</text>
-      <text style="font-size: 32rpx; margin: 16rpx 0 0 80rpx">{{experimentsInfo.period}}</text>
+      <text style="font-size: 32rpx; margin: 16rpx 0 0 40rpx">{{experimentsInfo.period}}</text>
     </view>
-    <view class="detail-item">
+    <view class="detail-item-column">
       <text>实验内容:</text>
-      <text>{{experimentsInfo.content}}</text>
+      <text style="font-size: 32rpx; margin: 16rpx 0 0 40rpx">{{experimentsInfo.content}}</text>
     </view>
-    <view class="detail-item">
+    <view class="detail-item-column">
       <text>其他信息:</text>
-      <text>{{experimentsInfo.others}}</text>
+      <text style="font-size: 32rpx; margin: 16rpx 0 0 40rpx">{{experimentsInfo.others}}</text>
     </view>
-    <view class="detail-item">
+    <view class="detail-item-column">
       <text>报名方式:</text>
-      <text>{{experimentsInfo.application}}</text>
+      <text style="font-size: 32rpx; margin: 16rpx 0 0 40rpx">{{experimentsInfo.application}}</text>
     </view>
   </view>
   <button class="{{subscribed ? 'gray':'green'}}" bindtap="manageSubExperiment">{{subscribed ? '取消标记':'标记为我已预约'}}</button>

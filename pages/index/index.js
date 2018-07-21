@@ -93,6 +93,16 @@ Page({
       })
     }
   },
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '寻找你心仪的实验',
+      path: '/siginPage/sigin/sigin'
+    }
+  },
   onLoad() {
     const ctx = this
     wx.getStorage({
